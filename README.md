@@ -9,6 +9,7 @@ A structured repository documenting automation testing frameworks, scripts, and 
 | Project | Target Application | Framework & Language | Architecture | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | [`OHRM_POMSampleDesign`](./OHRM_POMSampleDesign) | [OrangeHRM Demo](https://opensource-demo.orangehrmlive.com) | Playwright (`@playwright/test` `^1.65.1`), JavaScript | Layered Page Object Model (POM) | Completed |
+| [`AutomationTestingExercise_userregistrationPOMdesign`](./AutomationTestingExercise_userregistrationPOMdesign) | [Automation Exercise](https://www.automationexercise.com/) | Playwright (`@playwright/test` `^1.65.1`), JavaScript | Layered POM with Inheritance & CI | Completed |
 
 ---
 
@@ -16,6 +17,24 @@ A structured repository documenting automation testing frameworks, scripts, and 
 
 ```text
 Automation-Testing-Internship-log/
+├── AutomationTestingExercise_userregistrationPOMdesign/
+│   ├── .github/workflows/playwright.yml        # GitHub Actions CI workflow
+│   ├── tests/
+│   │   ├── CommonMethods/
+│   │   │   └── CommonMethods.spec.js           # Reusable wait utility
+│   │   ├── BaseLibrary/
+│   │   │   └── BaseClass.spec.js               # Browser navigation & teardown wrapper
+│   │   ├── PageObjects/
+│   │   │   └── RegistrationObjects.spec.js     # Registration & account deletion locators
+│   │   ├── PageActions/
+│   │   │   └── RegistrationActions.spec.js     # Registration actions & assertions
+│   │   ├── TestScripts/
+│   │   │   └── RegistrationTestScript.spec.js  # End-to-end user registration & deletion test
+│   │   └── example.spec.js                     # Default Playwright sample test
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── playwright.config.js                    # Playwright config (Chromium, 90s timeout, video: 'on')
+│   └── README.md                               # Detailed framework documentation
 ├── OHRM_POMSampleDesign/
 │   ├── tests/
 │   │   ├── BaseLibrary/
@@ -63,6 +82,20 @@ An end-to-end Playwright test automation framework for **OrangeHRM** built in Ja
 
 ---
 
+### 2. AutomationTestingExercise_userregistrationPOMdesign
+
+An end-to-end Playwright test automation framework for **Automation Exercise** built in JavaScript using a 5-layer POM inheritance chain (`CommonMethods` → `BaseClass` → `RegistrationPageObjects` → `RgistrationActionclass` → `RegistrationTestScript`), complete with video recording and a GitHub Actions CI workflow.
+
+#### Automated Test Coverage
+
+| # | Module / Operation | Test Script | Summary |
+| :-: | :--- | :--- | :--- |
+| 1 | **User Registration & Cleanup** | `RegistrationTestScript.spec.js` | Registers a new user with a dynamic email, fills personal/address details, verifies `Account Created!`, then deletes the account and verifies `Account Deleted!`. |
+
+> For full architecture details and usage, see [`AutomationTestingExercise_userregistrationPOMdesign/README.md`](./AutomationTestingExercise_userregistrationPOMdesign/README.md).
+
+---
+
 ## Getting Started
 
 ### Prerequisites
@@ -74,8 +107,9 @@ An end-to-end Playwright test automation framework for **OrangeHRM** built in Ja
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/anujkandalkar/Automation-Testing-Internship-log.git
-   cd Automation-Testing-Internship-log/OHRM_POMSampleDesign
+   cd Automation-Testing-Internship-log/<project-folder>
    ```
+   *(Replace `<project-folder>` with `OHRM_POMSampleDesign` or `AutomationTestingExercise_userregistrationPOMdesign`.)*
 
 2. **Install dependencies and Playwright browsers:**
    ```bash
@@ -90,9 +124,6 @@ An end-to-end Playwright test automation framework for **OrangeHRM** built in Ja
 
    # Run all tests in headed mode
    npx playwright test --headed
-
-   # Run a specific test script
-   npx playwright test LoginTestScript.spec.js --headed
 
    # Open Playwright UI Mode
    npx playwright test --ui
