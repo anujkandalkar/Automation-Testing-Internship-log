@@ -1,4 +1,4 @@
-# AutomationTestingExercise_userregistrationPOMdesign
+# ATExercise_RegistrationPOMdesign
 
 A Playwright end-to-end test automation framework for **Automation Exercise** (`https://www.automationexercise.com/`) built in JavaScript using a layered **Page Object Model (POM)** inheritance architecture.
 
@@ -10,7 +10,7 @@ The framework follows a 5-layer inheritance chain:
 `CommonMethods` → `BaseClass` → `RegistrationPageObjects` → `RgistrationActionclass` → `RegistrationTestScript`
 
 ```text
-AutomationTestingExercise_userregistrationPOMdesign/
+ATExercise_RegistrationPOMdesign/
 ├── .github/
 │   └── workflows/
 │       └── playwright.yml                  # GitHub Actions CI workflow for Playwright tests
@@ -81,7 +81,7 @@ AutomationTestingExercise_userregistrationPOMdesign/
 
 1. **Navigate to the project directory:**
    ```bash
-   cd AutomationTestingExercise_userregistrationPOMdesign
+   cd ATExercise_RegistrationPOMdesign
    ```
 
 2. **Install dependencies:**

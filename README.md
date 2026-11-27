@@ -9,7 +9,7 @@ A structured repository documenting automation testing frameworks, scripts, and 
 | Project | Target Application | Framework & Language | Architecture | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | [`OHRM_POMSampleDesign`](./OHRM_POMSampleDesign) | [OrangeHRM Demo](https://opensource-demo.orangehrmlive.com) | Playwright (`@playwright/test` `^1.65.1`), JavaScript | Layered Page Object Model (POM) | Completed |
-| [`AutomationTestingExercise_userregistrationPOMdesign`](./AutomationTestingExercise_userregistrationPOMdesign) | [Automation Exercise](https://www.automationexercise.com/) | Playwright (`@playwright/test` `^1.65.1`), JavaScript | Layered POM with Inheritance & CI | Completed |
+| [`ATExercise_RegistrationPOMdesign`](./ATExercise_RegistrationPOMdesign) | [Automation Exercise](https://www.automationexercise.com/) | Playwright (`@playwright/test` `^1.65.1`), JavaScript | Layered POM with Inheritance & CI | Completed |
 
 ---
 
@@ -17,7 +17,7 @@ A structured repository documenting automation testing frameworks, scripts, and 
 
 ```text
 Automation-Testing-Internship-log/
-├── AutomationTestingExercise_userregistrationPOMdesign/
+├── ATExercise_RegistrationPOMdesign/
 │   ├── .github/workflows/playwright.yml        # GitHub Actions CI workflow
 │   ├── tests/
 │   │   ├── CommonMethods/
@@ -82,7 +82,7 @@ An end-to-end Playwright test automation framework for **OrangeHRM** built in Ja
 
 ---
 
-### 2. AutomationTestingExercise_userregistrationPOMdesign
+### 2. ATExercise_RegistrationPOMdesign
 
 An end-to-end Playwright test automation framework for **Automation Exercise** built in JavaScript using a 5-layer POM inheritance chain (`CommonMethods` → `BaseClass` → `RegistrationPageObjects` → `RgistrationActionclass` → `RegistrationTestScript`), complete with video recording and a GitHub Actions CI workflow.
 
@@ -92,7 +92,7 @@ An end-to-end Playwright test automation framework for **Automation Exercise** b
 | :-: | :--- | :--- | :--- |
 | 1 | **User Registration & Cleanup** | `RegistrationTestScript.spec.js` | Registers a new user with a dynamic email, fills personal/address details, verifies `Account Created!`, then deletes the account and verifies `Account Deleted!`. |
 
-> For full architecture details and usage, see [`AutomationTestingExercise_userregistrationPOMdesign/README.md`](./AutomationTestingExercise_userregistrationPOMdesign/README.md).
+> For full architecture details and usage, see [`ATExercise_RegistrationPOMdesign/README.md`](./ATExercise_RegistrationPOMdesign/README.md).
 
 ---
 
@@ -109,7 +109,7 @@ An end-to-end Playwright test automation framework for **Automation Exercise** b
    git clone https://github.com/anujkandalkar/Automation-Testing-Internship-log.git
    cd Automation-Testing-Internship-log/<project-folder>
    ```
-   *(Replace `<project-folder>` with `OHRM_POMSampleDesign` or `AutomationTestingExercise_userregistrationPOMdesign`.)*
+   *(Replace `<project-folder>` with `OHRM_POMSampleDesign` or `ATExercise_RegistrationPOMdesign`.)*
 
 2. **Install dependencies and Playwright browsers:**
    ```bash
